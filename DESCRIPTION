@@ -4,7 +4,7 @@ Title: Elementary Probability on Finite Sample Spaces
 Version: 0.0.1
 Date: 2024-05-24
 Authors@R: c(person(given = "G. Jay", family = "Kerns", role = c("aut", "cph"), email = "gkerns@ysu.edu"), person(given="Joe", family="gr. Schlarmann", role=c("cre"), email="schlarmann@produnis.de"))
-Description: A framework for performing elementary probability calculations on finite sample spaces, which may be represented by data frames or lists.  This package is ment to rescue some widely used functions from the "prob" package (see https://cran.r-project.org/src/contrib/Archive/prob).
+Description: A framework for performing elementary probability calculations on finite sample spaces, which may be represented by data frames or lists.  This package is ment to rescue some widely used functions from the "prob" package (see https://cran.r-project.org/src/contrib/Archive/prob). This package is on github, see https://github.com/produnis/probs 
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
