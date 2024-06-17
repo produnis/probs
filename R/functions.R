@@ -838,7 +838,7 @@
 #' @param ... further arguments to be passed to or from other methods.
 #' @details
 #' The function will only return \code{TRUE} if every element of \code{y} is present in the vector \code{x}, counting multiplicity.  See the examples below.  Of \code{ordered = TRUE}, then elements must be in the vector \code{x} in the order specified in \code{y}.  Compare this to the behavior of the \code{\%in\%} function in the \code{base} package.
-#' This is a generic function with a moethod for data frames, which applies \code{isin()} to each row of the data frame, with a vector as a result.
+#' This is a generic function with a method for data frames, which applies \code{isin()} to each row of the data frame, with a vector as a result.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{isrep}}
 #' @examples
@@ -864,7 +864,7 @@
 #' @param ... further arguments to be passed to or from other methods.
 #' @details
 #' The function will only return \code{TRUE} if every element of \code{y} is present in the vector \code{x}, counting multiplicity.  See the examples below.  Of \code{ordered = TRUE}, then elements must be in the vector \code{x} in the order specified in \code{y}.  Compare this to the behavior of the \code{\%in\%} function in the \code{base} package.
-#' This is a generic function with a moethod for data frames, which applies \code{isin()} to each row of the data frame, with a vector as a result.
+#' This is a generic function with a method for data frames, which applies \code{isin()} to each row of the data frame, with a vector as a result.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{isrep}}
 #' @examples
@@ -892,7 +892,7 @@
 #' @param ... further arguments to be passed to or from other methods.
 #' @details
 #' The function will only return \code{TRUE} if every element of \code{y} is present in the vector \code{x}, counting multiplicity.  See the examples below.  Of \code{ordered = TRUE}, then elements must be in the vector \code{x} in the order specified in \code{y}.  Compare this to the behavior of the \code{\%in\%} function in the \code{base} package.
-#' This is a generic function with a moethod for data frames, which applies \code{isin()} to each row of the data frame, with a vector as a result.
+#' This is a generic function with a method for data frames, which applies \code{isin()} to each row of the data frame, with a vector as a result.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{isrep}}
 #' @examples
