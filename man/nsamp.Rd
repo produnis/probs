@@ -22,7 +22,7 @@ A number.
 Calculates the number of samples from an urn under different sampling scenarios.
 }
 \details{
-The \code{nsamp()} function will calculate the number of samples from an urn under assorted assumptions on the sampling procedure. The arguments are: \code{n}, the number of (distinguishable) objects in the urn, \code{k}, the sample size, and \code{replace}, \code{ordered} as documented in \code{\link[prob]{urnsamples}}.
+The \code{nsamp()} function will calculate the number of samples from an urn under assorted assumptions on the sampling procedure. The arguments are: \code{n}, the number of (distinguishable) objects in the urn, \code{k}, the sample size, and \code{replace}, \code{ordered} as documented in \code{\link[probs]{urnsamples}}.
 
 \code{nsamp()} is vectorized, so that entering vectors instead of numbers for \code{n}, \code{k}, \code{replace}, and \code{ordered} results in a vector of corresponding answers.
 
@@ -42,7 +42,7 @@ nsamp(n = 3, k = 2, replace = FALSE, ordered = TRUE)
 
 }
 \seealso{
-\code{\link[prob]{urnsamples}}
+\code{\link[probs]{urnsamples}}
 }
 \author{
 G. Jay Kerns \email{gkerns@ysu.edu}.

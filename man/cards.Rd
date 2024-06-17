@@ -26,7 +26,7 @@ cards(makespace = TRUE)
 
 }
 \seealso{
-\code{\link[prob]{rolldie}}, \code{\link[prob]{tosscoin}}, and \code{\link[prob]{roulette}}
+\code{\link[probs]{rolldie}}, \code{\link[probs]{tosscoin}}, and \code{\link[probs]{roulette}}
 }
 \author{
 G. Jay Kerns \email{gkerns@ysu.edu}.

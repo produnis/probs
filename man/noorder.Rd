@@ -24,7 +24,7 @@ noorder(S)
 
 }
 \seealso{
-\code{\link[prob]{addrv}}, \code{\link[prob]{marginal}}
+\code{\link[probs]{addrv}}, \code{\link[probs]{marginal}}
 }
 \author{
 G. Jay Kerns \email{gkerns@ysu.edu}.

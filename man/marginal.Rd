@@ -26,7 +26,7 @@ marginal(S, vars = c("X1", "X2"))
 
 }
 \seealso{
-See \code{\link[prob]{addrv}} for adding random variables to a data frame probability space.
+See \code{\link[probs]{addrv}} for adding random variables to a data frame probability space.
 }
 \author{
 G. Jay Kerns \email{gkerns@ysu.edu}.

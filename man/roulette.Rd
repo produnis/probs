@@ -26,7 +26,7 @@ roulette(european = TRUE, makespace = TRUE)
 
 }
 \seealso{
-\code{\link[prob]{cards}}
+\code{\link[probs]{cards}}
 }
 \author{
 G. Jay Kerns \email{gkerns@ysu.edu}.

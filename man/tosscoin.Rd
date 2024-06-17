@@ -26,7 +26,7 @@ tosscoin(3, makespace = TRUE)
 
 }
 \seealso{
-\code{\link[prob]{rolldie}}
+\code{\link[probs]{rolldie}}
 }
 \author{
 G. Jay Kerns \email{gkerns@ysu.edu}.

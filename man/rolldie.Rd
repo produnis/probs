@@ -29,7 +29,7 @@ rolldie(3, nsides = 4, makespace = TRUE)
 
 }
 \seealso{
-\code{\link[prob]{tosscoin}}
+\code{\link[probs]{tosscoin}}
 }
 \author{
 G. Jay Kerns \email{gkerns@ysu.edu}.

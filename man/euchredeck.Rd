@@ -26,6 +26,6 @@ euchredeck(benny = TRUE, makespace = TRUE)
 
 }
 \seealso{
-\code{\link[prob]{cards}}, \code{\link[prob]{tosscoin}}, and \code{\link[prob]{roulette}}
+\code{\link[probs]{cards}}, \code{\link[probs]{tosscoin}}, and \code{\link[probs]{roulette}}
 }
 \keyword{data}
