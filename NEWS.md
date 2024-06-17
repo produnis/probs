@@ -5,6 +5,6 @@
 
 # probs 0.0.1
 
-* initial setup of the package on github, see <https://github.com/produnis/probs>.
-* added my most missed functions from the package archive found at <https://cran.r-project.org/src/contrib/Archive/prob>
+* initial setup of the package on github, see [https://github.com/produnis/probs](https://github.com/produnis/probs).
+* added my most missed functions from the package archive found at (see [https://cran.r-project.org/src/contrib/Archive/prob/](https://cran.r-project.org/src/contrib/Archive/prob/))
 
