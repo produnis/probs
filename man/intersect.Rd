@@ -12,6 +12,9 @@ intersect(x, ...)
 
 \item{...}{further arguments to be passed to or from other methods.}
 }
+\value{
+A vector, data frame, or subset of a probability space of the same type as its arguments.
+}
 \description{
 Intersection of Subsets
 Calculates the intersection of subsets of a probability space.  Comparisons are made row-wise, so that in the data frame case, \code{intersect(A,B)} is a data frame with those rows that are both in \code{A} and in \code{B}.

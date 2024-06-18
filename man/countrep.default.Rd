@@ -16,6 +16,9 @@ Counts the number of repetitions of \code{vals} in a given vector \code{x}.}
 
 \item{...}{further arguments to be passed to or from other methods.}
 }
+\value{
+If \code{x} is a vector, then the value is an integer.  If \code{x} is a data frame then the value is a vector, with entries the corresponding value for the respective rows of \code{x}
+}
 \description{
 Count Repetitions
 Counts the number of repetitions of \code{vals} in a given vector \code{x}.

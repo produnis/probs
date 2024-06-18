@@ -14,6 +14,9 @@ Forms a probability space from a set of outcomes and (optional) vector of probab
 
 \item{...}{further arguments to be passed to or from other methods.}
 }
+\value{
+If \code{outcomes} is a vector or data frame, then the value is a data frame with an added \code{probs} column.  If \code{outcomes} is a list, then the value is a list with components \code{outcomes} (the supplied list) and a \code{probs} component.
+}
 \description{
 Probability Spaces
 Forms a probability space from a set of outcomes and (optional) vector of probabilities.

@@ -18,6 +18,9 @@ This function creates a sample space associated with the experiment of sampling 
 
 \item{...}{further arguments to be passed to or from other methods.}
 }
+\value{
+A data frame if \code{urn} is a vector, and a list if \code{urn} is a data frame.
+}
 \description{
 Sampling from Urns
 This function creates a sample space associated with the experiment of sampling distinguishable objects from an urn.

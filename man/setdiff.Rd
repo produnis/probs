@@ -12,6 +12,9 @@ setdiff(x, ...)
 
 \item{...}{further arguments to be passed to or from other methods.}
 }
+\value{
+A data frame or subset of a probability space of the same type as its arguments.
+}
 \description{
 Set Difference of Subsets
 Calculates the (nonsymmetric) set difference of subsets of a probability space.

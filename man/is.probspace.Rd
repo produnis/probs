@@ -10,6 +10,9 @@ is.probspace(x)
 \arguments{
 \item{x}{an object for which probability space status should be checked.}
 }
+\value{
+Logical.
+}
 \description{
 Testing for a Probability Space
 Decides whether a given object is a probability space.

@@ -14,6 +14,9 @@
 
 \item{...}{further arguments to be passed to or from other methods.}
 }
+\value{
+A \code{ps} object, a subset of a probability space.
+}
 \description{
 Subsets of Probability Spaces
  This is a method for \code{subset()} for the case when the input object is a probability space of class \code{ps}.

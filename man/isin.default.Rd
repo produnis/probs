@@ -15,6 +15,9 @@
 
 \item{...}{further arguments to be passed to or from other methods.}
 }
+\value{
+Logical, or a vector of logicals.
+}
 \description{
 Test Whether One Vector Is In Another Vector
 }

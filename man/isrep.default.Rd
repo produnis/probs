@@ -16,6 +16,9 @@ Tests for a certain number of repetitions of \code{vals} in a given vector \code
 
 \item{...}{further arguments to be passed to or from other methods.}
 }
+\value{
+Logical.
+}
 \description{
 Is Repeated in a Vector
 Tests for a certain number of repetitions of \code{vals} in a given vector \code{x}.

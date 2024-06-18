@@ -212,6 +212,7 @@
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @importFrom stats aggregate
 #' @importFrom utils combn
+#' @return  A data frame if \code{urn} is a vector, and a list if \code{urn} is a data frame.
 #' @examples
 #' urnsamples(1:10, size = 5)
 #' S <- cards()
@@ -231,6 +232,7 @@
 #' @param ... further arguments to be passed to or from other methods.
 #' @details The function operates on the indices of the urn (or rows, in the case \code{urn} is a data frame).  It then takes those samples and substitutes back into \code{urn} to generate the entries of the data frame (or list, respectively).  In the case that \code{urn} has repeated values, the result will be repeated values in the output. Note that \code{urnsamples} strips \code{x} of any existing \code{probs} column before sampling.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @return  A data frame if \code{urn} is a vector, and a list if \code{urn} is a data frame.
 #' @importFrom stats aggregate
 #' @importFrom utils combn
 #' @examples
@@ -289,6 +291,7 @@
 #' @param ... further arguments to be passed to or from other methods.
 #' @details The function operates on the indices of the urn (or rows, in the case \code{urn} is a data frame).  It then takes those samples and substitutes back into \code{urn} to generate the entries of the data frame (or list, respectively).  In the case that \code{urn} has repeated values, the result will be repeated values in the output. Note that \code{urnsamples} strips \code{x} of any existing \code{probs} column before sampling.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @return  A data frame if \code{urn} is a vector, and a list if \code{urn} is a data frame.
 #' @importFrom stats aggregate
 #' @importFrom utils combn
 #' @examples
@@ -673,6 +676,7 @@
 #' @details It first checks if the class of the object includes \code{ps}, and if so \code{TRUE} is returned.  If not, then it checks that the object is a data frame and contains a \code{probs} column.  Lastly, it checks whether all entries of \code{probs} are nonnegative.   Note that it does not check whether the sum of \code{probs} is one, to allow for the possibility that the input object is a proper subset of a probability space.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{probspace}}
+#' @return Logical.
 #' @examples
 #' S <- rolldie(3, makespace = TRUE)
 #' is.probspace(S)
@@ -696,6 +700,7 @@
 #' @param ... further arguments to be passed to or from other methods.
 #' @details The elements of \code{probs} will be normalized to ensure that their sum is one.  If \code{probs} is not specified, then the equally likely model is assumed in which every outcome has the same probability.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @return If \code{outcomes} is a vector or data frame, then the value is a data frame with an added \code{probs} column.  If \code{outcomes} is a list, then the value is a list with components \code{outcomes} (the supplied list) and a \code{probs} component.
 #' @examples
 #' R <- rolldie(3)
 #' probspace(R)
@@ -712,6 +717,7 @@
 #' @param ... further arguments to be passed to or from other methods.
 #' @details The elements of \code{probs} will be normalized to ensure that their sum is one.  If \code{probs} is not specified, then the equally likely model is assumed in which every outcome has the same probability.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @return If \code{outcomes} is a vector or data frame, then the value is a data frame with an added \code{probs} column.  If \code{outcomes} is a list, then the value is a list with components \code{outcomes} (the supplied list) and a \code{probs} component.
 #' @examples
 #' R <- rolldie(3)
 #' probspace(R)
@@ -738,6 +744,7 @@
 #' @param probs a vector of non-negative weights of the same length as \code{outcomes}
 #' @param ... further arguments to be passed to or from other methods.
 #' @details The elements of \code{probs} will be normalized to ensure that their sum is one.  If \code{probs} is not specified, then the equally likely model is assumed in which every outcome has the same probability.
+#' @return If \code{outcomes} is a vector or data frame, then the value is a data frame with an added \code{probs} column.  If \code{outcomes} is a list, then the value is a list with components \code{outcomes} (the supplied list) and a \code{probs} component.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @examples
 #' R <- rolldie(3)
@@ -771,6 +778,7 @@
 #' @details  This is a generic function, with methods supplied for data frames and vectors. The default behavior counts the number of pairs of elements of \code{x}.  One can find the number of triples, etc., by changing the \code{nrep} argument.  If there are specific values for which one is looking for repeats, these can be specified with the \code{vals} argument.  Note that the function only checks for \emph{exactly} \code{nrep} instances, so two pairs of a specific element would be counted as 0 pairs and 1 quadruple. See the examples.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{isrep}}
+#' @return If \code{x} is a vector, then the value is an integer.  If \code{x} is a data frame then the value is a vector, with entries the corresponding value for the respective rows of \code{x}
 #' @examples
 #' x <- c(3,3,2,2,3,3,4,4)
 #' countrep(x)  # one pair each of 2s and 4s
@@ -789,6 +797,7 @@
 #' @details  This is a generic function, with methods supplied for data frames and vectors. The default behavior counts the number of pairs of elements of \code{x}.  One can find the number of triples, etc., by changing the \code{nrep} argument.  If there are specific values for which one is looking for repeats, these can be specified with the \code{vals} argument.  Note that the function only checks for \emph{exactly} \code{nrep} instances, so two pairs of a specific element would be counted as 0 pairs and 1 quadruple. See the examples.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{isrep}}
+#' @return If \code{x} is a vector, then the value is an integer.  If \code{x} is a data frame then the value is a vector, with entries the corresponding value for the respective rows of \code{x}
 #' @examples
 #' x <- c(3,3,2,2,3,3,4,4)
 #' countrep(x)  # one pair each of 2s and 4s
@@ -812,6 +821,7 @@
 #' @details  This is a generic function, with methods supplied for data frames and vectors. The default behavior counts the number of pairs of elements of \code{x}.  One can find the number of triples, etc., by changing the \code{nrep} argument.  If there are specific values for which one is looking for repeats, these can be specified with the \code{vals} argument.  Note that the function only checks for \emph{exactly} \code{nrep} instances, so two pairs of a specific element would be counted as 0 pairs and 1 quadruple. See the examples.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{isrep}}
+#' @return If \code{x} is a vector, then the value is an integer.  If \code{x} is a data frame then the value is a vector, with entries the corresponding value for the respective rows of \code{x}
 #' @examples
 #' x <- c(3,3,2,2,3,3,4,4)
 #' countrep(x)  # one pair each of 2s and 4s
@@ -841,6 +851,7 @@
 #' This is a generic function with a method for data frames, which applies \code{isin()} to each row of the data frame, with a vector as a result.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{isrep}}
+#' @return Logical, or a vector of logicals.
 #' @examples
 #' x <- 1:10
 #' y <- 3:7
@@ -867,6 +878,7 @@
 #' This is a generic function with a method for data frames, which applies \code{isin()} to each row of the data frame, with a vector as a result.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{isrep}}
+#' @return Logical, or a vector of logicals.
 #' @examples
 #' x <- 1:10
 #' y <- 3:7
@@ -894,6 +906,7 @@
 #' The function will only return \code{TRUE} if every element of \code{y} is present in the vector \code{x}, counting multiplicity.  See the examples below.  Of \code{ordered = TRUE}, then elements must be in the vector \code{x} in the order specified in \code{y}.  Compare this to the behavior of the \code{\%in\%} function in the \code{base} package.
 #' This is a generic function with a method for data frames, which applies \code{isin()} to each row of the data frame, with a vector as a result.
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @return Logical, or a vector of logicals.
 #' @seealso \code{\link[probs]{isrep}}
 #' @examples
 #' x <- 1:10
@@ -943,6 +956,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{countrep}}
+#' @return Logical.
 #' @examples
 #' x <- c(3,3,2,2,3,3,4,4)
 #' isrep(x)  # one pair each of 2s and 4s
@@ -965,6 +979,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{countrep}}
+#' @return Logical.
 #' @examples
 #' x <- c(3,3,2,2,3,3,4,4)
 #' isrep(x)  # one pair each of 2s and 4s
@@ -991,6 +1006,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 #' @seealso \code{\link[probs]{countrep}}
+#' @return Logical.
 #' @examples
 #' x <- c(3,3,2,2,3,3,4,4)
 #' isrep(x)  # one pair each of 2s and 4s
@@ -1032,6 +1048,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}, based on a suggestion made by Brian Ripley in \code{R}-devel, 12/11/07.
 #' @seealso \code{\link[probs]{union}}, \code{\link[probs]{setdiff}}
+#' @return A vector, data frame, or subset of a probability space of the same type as its arguments.
 #' @examples
 #' S <- cards()
 #' A <- subset(S, suit == "Heart")
@@ -1052,6 +1069,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}, based on a suggestion made by Brian Ripley in \code{R}-devel, 12/11/07.
 #' @seealso \code{\link[probs]{union}}, \code{\link[probs]{setdiff}}
+#' @return A vector, data frame, or subset of a probability space of the same type as its arguments.
 #' @examples
 #' S <- cards()
 #' A <- subset(S, suit == "Heart")
@@ -1077,6 +1095,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}, based on a suggestion made by Brian Ripley in \code{R}-devel, 12/11/07.
 #' @seealso \code{\link[probs]{union}}, \code{\link[probs]{setdiff}}
+#' @return A vector, data frame, or subset of a probability space of the same type as its arguments.
 #' @examples
 #' S <- cards()
 #' A <- subset(S, suit == "Heart")
@@ -1101,6 +1120,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}, based on a suggestion made by Brian Ripley in \code{R}-devel, 12/11/07.
 #' @seealso \code{\link[probs]{union}}, \code{\link[probs]{setdiff}}
+#' @return A vector, data frame, or subset of a probability space of the same type as its arguments.
 #' @examples
 #' S <- cards()
 #' A <- subset(S, suit == "Heart")
@@ -1126,6 +1146,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}, essentially verbatim from a suggestion made by Brian Ripley on \code{R}-devel, 12/11/07
 #' @seealso \code{\link[probs]{intersect}}, \code{\link[probs]{union}}
+#' @return  A data frame or subset of a probability space of the same type as its arguments.
 #' @examples
 #' S <- cards()
 #' A <- subset(S, suit == "Heart")
@@ -1147,6 +1168,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}, essentially verbatim from a suggestion made by Brian Ripley on \code{R}-devel, 12/11/07
 #' @seealso \code{\link[probs]{intersect}}, \code{\link[probs]{union}}
+#' @return  A data frame or subset of a probability space of the same type as its arguments.
 #' @examples
 #' S <- cards()
 #' A <- subset(S, suit == "Heart")
@@ -1170,6 +1192,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}, essentially verbatim from a suggestion made by Brian Ripley on \code{R}-devel, 12/11/07
 #' @seealso \code{\link[probs]{intersect}}, \code{\link[probs]{union}}
+#' @return  A data frame or subset of a probability space of the same type as its arguments.
 #' @examples
 #' S <- cards()
 #' A <- subset(S, suit == "Heart")
@@ -1195,6 +1218,7 @@
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}, essentially verbatim from a suggestion made by Brian Ripley on \code{R}-devel, 12/11/07
 #' @seealso \code{\link[probs]{intersect}}, \code{\link[probs]{union}}
+#' @return  A data frame or subset of a probability space of the same type as its arguments.
 #' @examples
 #' S <- cards()
 #' A <- subset(S, suit == "Heart")
@@ -1221,6 +1245,7 @@
 #' @details This function simply extends the existing \code{subset()} function to \code{ps} objects.
 #'
 #' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @return A \code{ps} object, a subset of a probability space.
 #' @examples
 #' L <- tosscoin(2)
 #' M <- urnsamples(L, 3)
