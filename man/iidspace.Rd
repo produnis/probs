@@ -14,6 +14,9 @@ iidspace(x, ntrials, probs = NULL)
 
 \item{probs}{vector of non-negative weights corresponding to \code{x}.}
 }
+\value{
+A data frame, with a \code{probs} column, where \code{probs} is calculated to be the probability of observing the outcome in its row under the assumption of independence and identical distribution of draws from \code{x}.
+}
 \description{
 Independent Identical Experiments
 Sets up a probability space corresponding to independent, identical experiments.
