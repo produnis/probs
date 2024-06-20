@@ -1,0 +1,10 @@
+# src/Makevars
+
+# Setze Standard-Compiler-Flags
+PKG_CFLAGS = -O2
+PKG_FFLAGS = -O2
+
+# Entferne nicht-portable Flags
+# Statt += und := werden die Standard-Compiler-Flags direkt gesetzt
+CFLAGS = $(shell echo $(CFLAGS) | sed 's/-Werror=format-security//g' | sed 's/-Wformat//g' | sed 's/-Wp,-D_FORTIFY_SOURCE=3//g' | sed 's/-march=x86-64//g' | sed 's/-mno-omit-leaf-frame-pointer//g')
+FFLAGS = $(shell echo $(FFLAGS) | sed 's/-Werror=format-security//g' | sed 's/-Wformat//g' | sed 's/-Wp,-D_FORTIFY_SOURCE=3//g' | sed 's/-march=x86-64//g' | sed 's/-mno-omit-leaf-frame-pointer//g')

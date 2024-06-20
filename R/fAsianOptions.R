@@ -16,6 +16,8 @@
 #' @param lnchf default 0
 #' @param ip  default 0
 #' @return a complex value
+#' @useDynLib probs, .registration = TRUE
+#' @importFrom Rcpp sourceCpp
 #' @export
 kummerM =
   function(x, a, b, lnchf = 0, ip = 0)
@@ -91,6 +93,8 @@ kummerU =
 #' @param log if TRUE the logarithm of the gamma is calculated otherwise if FALSE, the gamma function itself will be calculated.
 #' @return a complex value
 #' @source For the Fortran Routine: http://iris-lee3.ece.uiuc.edu/~jjin/routines/routines.html
+#' @useDynLib probs, .registration = TRUE
+#' @importFrom Rcpp sourceCpp
 #' @export
 cgamma =
   function(x, log = FALSE)
