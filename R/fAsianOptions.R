@@ -2,8 +2,7 @@
 #-----------------------------------------------
 
 #' A function implemented by Diethelm Wuertz
-#' @description
-#' Calculate the Confluent Hypergeometric Function of the First Kind for complex argument "x" and complex indexes "a" and "b"
+#' @description Calculate the Confluent Hypergeometric Function of the First Kind for complex argument "x" and complex indexes "a" and "b"
 #' @author Diethelm Wuertz
 #' @param x complex function argument
 #' @param a complex index
@@ -45,8 +44,7 @@ kummerM =
 # ------------------------------------------------------------------------------
 
 #' A function implemented by Diethelm Wuertz
-#' @description
-#' Calculate the Confluent Hypergeometric Function of the Second Kind for complex argument "x" and complex indexes "a" and "b"
+#' @description Calculate the Confluent Hypergeometric Function of the Second Kind for complex argument "x" and complex indexes "a" and "b"
 #' @author Diethelm Wuertz
 #' @param x complex function argument
 #' @param a complex index
