@@ -1,3 +1,9 @@
+####################################################
+# In order to let roxygen2() create all man pages, #
+# you must run the following command:              #
+#       roxygen2::roxygenise()                     #
+####################################################
+#
 ## Functions from the old fAsianOptions package
 #-----------------------------------------------
 
@@ -33,7 +39,7 @@ kummerM =
                      as.integer(length(x)),
                      as.integer(lnchf),
                      as.integer(ip),
-                     PACKAGE = "prob")
+                     PACKAGE = "probs")
     result = complex(real = value[[7]], imaginary = value[[8]])
 
     # Return Value:
@@ -81,7 +87,7 @@ kummerU =
 #' A function implemented by Diethelm Wuertz
 #' @description Computes the Gamma Function for complex argument "x"
 #' @author Diethelm Wuertz
-#' @param z a complex or real vector
+#' @param x a complex or real vector
 #' @param log if TRUE the logarithm of the gamma is calculated otherwise if FALSE, the gamma function itself will be calculated.
 #' @return a complex value
 #' @source For the Fortran Routine: http://iris-lee3.ece.uiuc.edu/~jjin/routines/routines.html
@@ -105,7 +111,7 @@ cgamma =
                        as.integer(KF),
                        as.double(0),
                        as.double(0),
-                       PACKAGE = "prob")
+                       PACKAGE = "probs")
       # PACKAGE = "fAsianOptions")
       result[i] = complex(real = value[[4]], imaginary = value[[5]])
     }

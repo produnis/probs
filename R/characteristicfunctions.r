@@ -1,8 +1,15 @@
+####################################################
+# In order to let roxygen2() create all man pages, #
+# you must run the following command:              #
+#       roxygen2::roxygenise()                     #
+####################################################
 #  Characteristic functions
 #  Released under GPL 2 or greater
 #  Copyright January 2009, G. Jay Kerns
 
 
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @importFrom stats dbeta integrate
 cfbeta <- function(t, shape1, shape2, ncp = 0){
     if (shape1 <=0 || shape2 <=0)
         stop("shape1, shape2 must be positive")
@@ -19,6 +26,8 @@ cfbeta <- function(t, shape1, shape2, ncp = 0){
 }
 
 
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cfbinom <- function(t, size, prob){
     if (size <= 0 )
         stop("size must be positive")
@@ -28,22 +37,30 @@ cfbinom <- function(t, size, prob){
 }
 
 
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cfcauchy = function(t, location = 0, scale = 1){
     if (scale <= 0 )
         stop("scale must be positive")
-    exp(1i*location*t - scale*abs(t))  
+    exp(1i*location*t - scale*abs(t))
 }
 
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cfchisq <- function(t, df, ncp = 0){
     if (df < 0 || ncp < 0  )
         stop("df and ncp must be nonnegative")
     exp(1i*ncp*t/(1-2i*t))/(1 - 2i*t)^(df/2)
 }
 
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cfexp <- function(t, rate = 1){
     cfgamma(t, shape = 1, scale = 1/rate)
 }
 
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cff <- function(t, df1, df2, ncp, kmax = 10){
     if (df1 <= 0 || df2 <= 0  )
         stop("df1 and df2 must be positive")
@@ -56,6 +73,8 @@ cff <- function(t, df1, df2, ncp, kmax = 10){
 }
 
 
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cfgamma <- function(t, shape, rate = 1, scale = 1/rate){
     if (rate <= 0  || scale <= 0)
         stop("rate must be positive")
@@ -63,18 +82,24 @@ cfgamma <- function(t, shape, rate = 1, scale = 1/rate){
 }
 
 
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cfgeom <- function(t, prob){
     cfnbinom(t, size = 1, prob = prob)
 }
 
 
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @importFrom hypergeo hypergeo
 cfhyper <- function(t, m, n, k){
     if (m < 0 || n < 0 || k < 0)
         stop("m, n, k must be positive")
-    hypergeo::hypergeo(-k, -m, n - k + 1, exp(1i*t))/hypergeo::hypergeo(-k, -m, n - k + 1, 1)
+    hypergeo(-k, -m, n - k + 1, exp(1i*t))/hypergeo(-k, -m, n - k + 1, 1)
 }
 
 
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @importFrom stats integrate
 cflnorm <- function(t, meanlog = 0, sdlog = 1){
     if (sdlog <= 0)
         stop("sdlog must be positive")
@@ -91,6 +116,8 @@ cflnorm <- function(t, meanlog = 0, sdlog = 1){
 }
 
 
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cflogis <- function(t, location = 0, scale = 1){
     if (scale <= 0)
         stop("scale must be positive")
@@ -100,13 +127,15 @@ cflogis <- function(t, location = 0, scale = 1){
 }
 
 
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cfnbinom <- function(t, size, prob, mu){
     if (size <= 0 )
         stop("size must be positive")
     if (prob <= 0 || prob > 1)
         stop("prob must be in (0,1]")
     if (!missing(mu)) {
-        if (!missing(prob)) 
+        if (!missing(prob))
             stop("'prob' and 'mu' both specified")
         prob <- size/(size+mu)
     }
@@ -114,12 +143,18 @@ cfnbinom <- function(t, size, prob, mu){
 }
 
 
+
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cfnorm <- function(t, mean = 0, sd = 1){
     if (sd <= 0)
         stop("sd must be positive")
-    exp(1i*mean - (sd*t)^2/2)  
+    exp(1i*mean - (sd*t)^2/2)
 }
 
+
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cfpois <- function(t, lambda){
     if (lambda <= 0)
         stop("lambda must be positive")
@@ -127,17 +162,25 @@ cfpois <- function(t, lambda){
 }
 
 
+
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @importFrom stats dsignrank
 cfsignrank <- function(t, n){
     sum(exp(1i*t*0:((n+1)*n/2)) * dsignrank(0:((n+1)*n/2), n))
 }
 
 
+
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @importFrom stats integrate dt
 cft <- function(t, df, ncp){
     if(missing(ncp)) ncp <- 0
     if (df <= 0)
         stop("df must be positive")
     if (identical(all.equal(ncp, 0), TRUE)){
-        ifelse(identical(all.equal(t, 0), TRUE), 1+0i, 
+        ifelse(identical(all.equal(t, 0), TRUE), 1+0i,
             as.complex(besselK(sqrt(df)*abs(t), df/2)*(sqrt(df)*abs(t))^(df/2)/( gamma(df/2) * 2^(df/2 - 1) ))
             )
     } else {
@@ -150,6 +193,9 @@ cft <- function(t, df, ncp){
 }
 
 
+
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
 cfunif <- function(t, min = 0, max = 1){
     if (max < min)
         stop("min cannot be greater than max")
@@ -159,6 +205,10 @@ cfunif <- function(t, min = 0, max = 1){
 }
 
 
+
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @importFrom stats dweibull integrate
 cfweibull <- function(t, shape, scale = 1){
     if (shape <= 0 || scale <= 0)
         stop("shape and scale must be positive")
@@ -170,6 +220,10 @@ cfweibull <- function(t, shape, scale = 1){
 }
 
 
+
+
+#' @author G. Jay Kerns \email{gkerns@ysu.edu}.
+#' @importFrom stats dwilcox
 cfwilcox <- function(t, m, n){
     sum(exp(1i*t*0:(m*n)) * dwilcox(0:(m*n), m, n))
 }
